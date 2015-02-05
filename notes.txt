@@ -1,0 +1,2 @@
+https://public-api.wordpress.com/rest/v1.1/sites/$site/posts/$post_ID
+https://public-api.wordpress.com/rest/v1.1/freshly-pressed/

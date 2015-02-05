@@ -1,0 +1,27 @@
+{
+  "name": "FreshReact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Armando Sosa",
+  "license": "ISC",
+  "dependencies": {
+    "6to5ify": "^4.0.0",
+    "browserify": "^8.1.3",
+    "flux": "^2.0.1",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.3",
+    "gulp-webserver": "^0.9.0",
+    "keymirror": "^0.1.1",
+    "object-assign": "^2.0.0",
+    "react": "^0.12.2",
+    "react-router": "^0.11.6",
+    "reactify": "^1.0.0",
+    "superagent": "^0.21.0",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}
