@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp dev",
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Armando Sosa",
@@ -15,6 +16,7 @@
     "flux": "^2.0.1",
     "gulp": "^3.8.10",
     "gulp-concat": "^2.4.3",
+    "gulp-rename": "^1.2.0",
     "gulp-webserver": "^0.9.0",
     "keymirror": "^0.1.1",
     "object-assign": "^2.0.0",

@@ -3,6 +3,7 @@ var source     = require('vinyl-source-stream');
 var browserify = require('browserify');
 var reactify   = require('reactify');
 var to5ify     = require('6to5ify');
+var rename     = require('gulp-rename');
 var webserver  = require('gulp-webserver');
 
 gulp.task('browserify', function () {
@@ -13,6 +14,7 @@ gulp.task('browserify', function () {
 
   bundleStream
     .pipe(source('main.js'))
+    .pipe(rename('bundle.js'))
     .pipe(gulp.dest('dist/js'));
 });
 
