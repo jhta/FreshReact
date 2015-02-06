@@ -1,6 +1,8 @@
 var Dispatcher = require('flux').Dispatcher;
 var assign  = require('object-assign');
 
+var n = 0;
+
 var Dispatcher = assign( new Dispatcher(), {
 
   handleRouteAction(action) {
@@ -26,6 +28,9 @@ var Dispatcher = assign( new Dispatcher(), {
   },
 
   handleViewAction(action) {
+
+    n++;
+    console.log(`dispatch #${n}`,action.type);
 
     var payload = {
       source : 'VIEW_ACTION',

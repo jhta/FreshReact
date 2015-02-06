@@ -7,18 +7,6 @@ var Link = Router.Link;
 
 var PostsSidebar = React.createClass({
 
-  selectPost(post){
-
-    var props = this.props;
-
-    return function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      props.onSelectPost(post.ID);
-    }
-
-  },
-
   render() {
 
     var posts = this.props.posts;
@@ -28,8 +16,8 @@ var PostsSidebar = React.createClass({
           <ul>
           {posts.map((post,index)=>{
             return (
-              <li key={post.ID}>
-                <a href="#" onClick={this.selectPost(post)}>{post.title}</a>
+              <li key={index}>
+                <Link to="post" params={{postId : post.ID}}>{post.title}</Link>
               </li>
             );
           })}

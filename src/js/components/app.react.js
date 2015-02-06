@@ -27,6 +27,7 @@ var App = React.createClass({
   },
 
   componentWillMount() {
+    console.log('a');
     PostsStore.addChangeListener(this.onChange);
   },
 
@@ -52,7 +53,7 @@ var App = React.createClass({
       <div className="row">
         <div className={cols(12)}>
           <header>
-            <h1 className="header-title">Fresh</h1>
+            <h1 className="header-title">Fresh React</h1>
           </header>
         </div>
         <div className={cols(4)}>

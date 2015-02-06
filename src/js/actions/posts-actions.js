@@ -7,23 +7,18 @@ var PostsActions = {
 
   loadPosts(){
 
-    Dispatcher.handleViewAction({
-      type : PostsActionTypes.WILL_LOAD_POSTS
+    API.getPosts(function(err,res){
+      if (err) {
+        Dispatcher.handleViewAction({
+          type : PostsActionTypes.ERROR_LOADING_POSTS
+        });
+      }else{
+        Dispatcher.handleViewAction({
+          type  : PostsActionTypes.SET_POSTS,
+          posts : res.body.posts
+        });
+      }
     });
-
-    API.getPosts()
-      .end(function(err,res){
-        if (err) {
-          Dispatcher.handleViewAction({
-            type : PostsActionTypes.ERROR_LOADING_POSTS
-          });
-        }else{
-          Dispatcher.handleViewAction({
-            type  : PostsActionTypes.SET_POSTS,
-            posts : res.body.posts
-          });
-        }
-      });
 
   },
 

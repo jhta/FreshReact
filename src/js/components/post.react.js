@@ -16,6 +16,10 @@ function _getPost(id){
 
 var Post = React.createClass({
 
+  getInitialState() {
+    return _getPost();
+  },
+
   componentWillMount() {
     AppStore.addChangeListener(this.onChange);
   },
@@ -30,7 +34,7 @@ var Post = React.createClass({
 
   render(){
 
-    var post = this.props.post;
+    var post = this.state.post;
 
     if ( ! post ) {
       return null;
@@ -40,7 +44,12 @@ var Post = React.createClass({
       <div className="post">
         <h1 className="post__title">{post.title}</h1>
         <div className="post__content">
-          {post.content}
+          <div
+          className="post__content__inner"
+          dangerouslySetInnerHTML={{
+            __html: post.content
+          }}/>
+
         </div>
       </div>
     )

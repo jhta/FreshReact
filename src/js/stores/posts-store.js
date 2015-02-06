@@ -4,25 +4,13 @@ var PostsActionTypes  = require('../constants/posts-action-types');
 var PostsActions      = require('../actions/posts-actions');
 
 var assign = require('object-assign');
+var _      = require('lodash');
 
 var _posts = [];
-var _currentPost = null;
 
 function _setPosts(posts){
 	console.log('posts',posts);
 	_posts = posts;
-}
-
-function _setCurrentPost( postId ){
-
-  postId = parseInt(postId);
-
-  _posts.forEach(function(post){
-    if (post.ID === postId) {
-      _currentPost = post;
-    }
-  });
-
 }
 
 var PostsStore = assign( BaseStore, {
@@ -35,8 +23,10 @@ var PostsStore = assign( BaseStore, {
   },
 
 	getPost(id) {
-    PostsActions.getPost(id);
-    return _currentPost;
+    var post = _.find(_posts,function(post){
+      return post.ID == parseInt(id,10);
+    });
+    return post;
   }
 
 });
